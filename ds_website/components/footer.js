@@ -10,7 +10,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span class="footer-brand">Debashish Sasmal</span>
-      <span class="footer-sub">Product &amp; Venture Leadership · Pittsburgh</span>
+      <span class="footer-sub">Product &amp; Venture Leadership · Pittsburgh, PA · Open to Relocation</span>
       <ul class="footer-links">
         <li><a href="https://theproductsignal.com/" class="footer-link" target="_blank" rel="noopener">PODCAST</a></li>
         <li><a href="mailto:debashish.sasmal@gmail.com" class="footer-link">EMAIL</a></li>
