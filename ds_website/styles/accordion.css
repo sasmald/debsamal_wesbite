@@ -1,0 +1,244 @@
+/* ============================================================
+   ACCORDION — expand/collapse case studies on work.html
+   ============================================================ */
+
+.accordion {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x) 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.accordion-item:first-child {
+  border-top: 1px solid var(--border);
+}
+
+/* Trigger row (always visible) */
+.accordion-trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 30px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--duration) var(--ease);
+}
+
+.accordion-trigger:hover .accordion-trigger__title {
+  color: var(--accent);
+}
+
+.accordion-trigger__left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-trigger__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.accordion-trigger__tag {
+  font: 500 11px var(--font-mono);
+  letter-spacing: .1em;
+  color: var(--sub);
+}
+
+.accordion-trigger__date {
+  font: 500 11px var(--font-mono);
+  letter-spacing: .1em;
+  color: var(--sub);
+}
+
+.accordion-trigger__title {
+  font: 500 32px/1.05 var(--font-serif);
+  letter-spacing: -.015em;
+  color: var(--ink);
+  transition: color var(--duration) var(--ease);
+}
+
+.accordion-trigger__summary {
+  font: 400 16px/1.55 var(--font-sans);
+  color: var(--sub);
+  margin-top: 4px;
+  max-width: 640px;
+}
+
+/* Expand icon */
+.accordion-trigger__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font: 400 20px var(--font-grotesk);
+  color: var(--sub);
+  transition: border-color var(--duration) var(--ease),
+              color var(--duration) var(--ease),
+              transform var(--duration) var(--ease);
+}
+
+.accordion-item.is-open .accordion-trigger__icon {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: rotate(45deg);
+}
+
+/* Body: collapsed by default */
+.accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 380ms var(--ease);
+}
+
+/* The inner div is required for grid-template-rows animation trick */
+.accordion-body__inner {
+  overflow: hidden;
+}
+
+.accordion-item.is-open .accordion-body {
+  grid-template-rows: 1fr;
+}
+
+/* Body content layout: Bet / Call / What Happened sit in three even
+   columns so there's no empty cell, then stats + proves span full width */
+.accordion-content {
+  padding: 4px 0 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.accordion-content__block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion-content__label {
+  font: 600 11px var(--font-mono);
+  letter-spacing: .14em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.accordion-content__text {
+  font: 400 16px/1.65 var(--font-sans);
+  color: var(--ink);
+}
+
+.accordion-content__text--sub {
+  font: 400 15px/1.65 var(--font-sans);
+  color: var(--sub);
+}
+
+/* Stats row inside expanded body */
+.accordion-stats {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.accordion-stat {
+  flex: 1;
+  padding: 22px 24px;
+  border-right: 1px solid var(--border);
+}
+
+.accordion-stat:last-child {
+  border-right: none;
+}
+
+.accordion-stat__value {
+  font: 700 36px var(--font-grotesk);
+  color: var(--ink);
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+
+.accordion-stat__value--accent {
+  color: var(--accent);
+}
+
+.accordion-stat__label {
+  font: 500 11px var(--font-mono);
+  color: var(--sub);
+  margin-top: 8px;
+  text-transform: lowercase;
+  letter-spacing: .02em;
+}
+
+/* Proves line */
+.accordion-content__proves {
+  grid-column: 1 / -1;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px 26px;
+  font: 400 16px/1.6 var(--font-sans);
+  color: var(--ink);
+}
+
+.accordion-content__proves strong {
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .accordion-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 780px) {
+  .accordion {
+    padding: 0 var(--pad-x) 56px;
+  }
+
+  .accordion-trigger {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 22px 0;
+  }
+
+  .accordion-trigger__title {
+    font-size: 24px;
+  }
+
+  .accordion-trigger__meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .accordion-stats {
+    flex-direction: column;
+  }
+
+  .accordion-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .accordion-stat:last-child {
+    border-bottom: none;
+  }
+}

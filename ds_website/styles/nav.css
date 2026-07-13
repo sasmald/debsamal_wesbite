@@ -1,0 +1,180 @@
+/* ============================================================
+   NAV — sticky header with frosted glass
+   ============================================================ */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: color-mix(in srgb, var(--paper) 86%, transparent);
+  /* Fallback for browsers without color-mix */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  position: relative;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo: name + tagline */
+.nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.nav-logo__name {
+  font: 500 21px var(--font-serif);
+  letter-spacing: -.01em;
+  color: var(--ink);
+  line-height: 1;
+  transition: color var(--duration) var(--ease);
+}
+
+.nav-logo:hover .nav-logo__name {
+  color: var(--accent);
+}
+
+.nav-logo__tagline {
+  font: 500 10px var(--font-mono);
+  letter-spacing: .14em;
+  color: var(--sub);
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-link {
+  font: 500 11px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--sub);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  color: var(--ink);
+}
+
+.nav-link.is-active {
+  border-bottom: 1.5px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* Contact CTA in nav */
+.nav-cta {
+  font: 600 11px var(--font-grotesk);
+  letter-spacing: .02em;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  padding: 8px 15px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--duration) var(--ease),
+              color var(--duration) var(--ease);
+}
+
+.nav-cta:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* Mobile hamburger toggle: hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink);
+  transition: transform var(--duration) var(--ease),
+              opacity var(--duration) var(--ease);
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 780px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--duration) var(--ease);
+  }
+
+  .nav-menu.is-open {
+    max-height: 320px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px var(--pad-x) 20px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 14px 0;
+    width: 100%;
+  }
+
+  .nav-link.is-active {
+    border-bottom: none;
+    color: var(--accent);
+  }
+
+  .nav-cta {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}

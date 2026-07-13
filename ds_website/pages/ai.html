@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI · Debashish Sasmal</title>
+  <meta name="description" content="A point of view on AI in regulated, expert-heavy products, backed by things I actually built.">
+
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/nav.css">
+  <link rel="stylesheet" href="../styles/page-hero.css">
+  <link rel="stylesheet" href="../styles/ai.css">
+  <link rel="stylesheet" href="../styles/buildlog.css">
+</head>
+<body>
+
+  <div data-include="header"></div>
+
+  <!-- =========================================================
+       PAGE HERO
+       ========================================================= -->
+  <div class="page-hero">
+    <p class="page-hero__eyebrow">// AI</p>
+    <h1 class="page-hero__headline">A point of view, not a feature list.</h1>
+    <p class="page-hero__body">
+      In regulated, expert-heavy products, AI's job isn't to replace the expert.
+      It's to remove the friction between the expert's judgment and the action.
+      I build small tools to keep that opinion honest.
+    </p>
+  </div>
+
+  <!-- =========================================================
+       POV SECTION
+       ========================================================= -->
+  <section class="ai-section">
+    <div class="ai-inner">
+      <div>
+        <p class="eyebrow eyebrow--light">// THE TAKE</p>
+        <h2 class="ai-quote">
+          AI earns autonomy the same way a new hire does: narrow scope, a
+          track record, then wider latitude. Anything else is a demo, not
+          a system.
+        </h2>
+      </div>
+      <div>
+        <p class="ai-body-primary">
+          The teams that get this right embed AI inside the existing workflow
+          (the system of record, the handoff, the queue) instead of bolting on
+          a separate app the expert has to context-switch into. And they let
+          trust compound in increments: tight scope first, human override
+          always live, autonomy widening only as the system proves itself in
+          that lane. Skip the increments and the failure mode shows up in
+          production instead of in a demo, and in healthcare, the failure
+          mode is the product.
+        </p>
+        <p class="ai-body-secondary">
+          I hold that view because I've built the workflow platforms where
+          embedding, not add-on features, was the unlock. And Keystone, below,
+          is that same trust-compounding logic applied to how I build with AI
+          myself: narrow gate, human call, then the next stage opens.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       AI BUILDS / PERSONAL PROJECTS
+       ========================================================= -->
+  <section style="max-width: var(--max-w); margin: 0 auto; padding: 80px var(--pad-x);">
+    <p class="eyebrow">// BUILDS</p>
+    <p style="font: 400 18px/1.62 var(--font-sans); color: var(--sub); margin-top: 18px; max-width: 620px;">
+      Small builds I ship myself to pressure-test what AI can actually do, and to
+      keep my engineering, product, strategy, and venture-investing instincts sharp
+      while I learn it firsthand.
+    </p>
+
+    <!-- Picture-to-Plate -->
+    <div class="buildlog-card" style="margin-top: 40px;">
+      <div class="buildlog-visual buildlog-visual--logo">
+        <img src="../imgs/pictoplate-logo.png" alt="Picture-to-Plate logo">
+      </div>
+      <div class="buildlog-content">
+        <p class="eyebrow">APPLIED AI · VISION + GENERATION · LIVE ON iOS</p>
+        <h3 class="buildlog-content__title">Picture-to-Plate</h3>
+        <p class="buildlog-content__body">
+          An image-to-recipe app, live on the App Store as an MVP. Photograph
+          what's in your fridge or pantry, get a recipe back. I built it to see where vision
+          models are reliable and where they hallucinate, and what that means for
+          product decisions in domains where the failure mode matters. It's also
+          where I'm capturing real usage data on where those failure modes
+          actually show up.
+        </p>
+        <p style="font: 400 14px/1.55 var(--font-sans); color: var(--sub); margin-top: 14px; max-width: 460px;">
+          What it taught me: the model already handles the vision and the
+          generation. What it can't do alone is remember your pantry and weigh
+          that against what you're in the mood for, that's the workflow layer,
+          and the payoff is a curated shortlist (3 almost-there, 3 a short trip,
+          3 worth planning around), not endless recipes.
+        </p>
+        <a href="https://apps.apple.com/us/app/pic-to-plate/id6784744692" class="btn btn--ghost-dark" style="margin-top: 24px;">
+          Get it on the App Store →
+        </a>
+      </div>
+    </div>
+
+    <!-- Keystone AI -->
+    <div class="buildlog-card" style="margin-top: 24px;">
+      <div class="buildlog-visual buildlog-visual--stages">
+        <div class="keystone-stages" aria-hidden="true">
+          <span class="keystone-stages__step">01</span>
+          <span class="keystone-stages__step">02</span>
+          <span class="keystone-stages__step">03</span>
+          <span class="keystone-stages__step">04</span>
+          <span class="keystone-stages__step">05</span>
+          <span class="keystone-stages__step">06</span>
+        </div>
+      </div>
+      <div class="buildlog-content">
+        <p class="eyebrow">APPLIED AI · PRODUCT ORCHESTRATION LAYER</p>
+        <h3 class="buildlog-content__title">Keystone AI</h3>
+        <p class="buildlog-content__body">
+          A human-in-the-loop orchestration layer for taking an idea to a validated
+          MVP. Skills and agents do the ground work at each of six stages; the
+          judgment, the constraints, and the go or no-go call stay with the expert
+          in the loop, here, a product manager. Nothing advances without that call.
+        </p>
+        <p style="font: 400 14px/1.55 var(--font-sans); color: var(--sub); margin-top: 14px; max-width: 460px;">
+          What it taught me: agents are confidently wrong often enough that the
+          gates aren't overhead, they're the actual product-management
+          contribution. Remove one to move faster and you ship something broken.
+        </p>
+        <a href="https://github.com/sasmald/keystone" class="btn btn--ghost-dark" target="_blank" rel="noopener" style="margin-top: 24px;">
+          View on GitHub →
+        </a>
+      </div>
+    </div>
+
+    <!-- Placeholder for future build -->
+    <div style="margin-top: 24px; border: 1.5px dashed var(--border); border-radius: var(--radius-lg); padding: 40px; text-align: center;">
+      <p style="font: 500 12px var(--font-mono); letter-spacing: .12em; color: var(--sub);">
+        NEXT UP · TRENDSHELF
+      </p>
+      <p style="font: 400 14px/1.55 var(--font-sans); color: var(--sub); margin-top: 10px; max-width: 440px; margin-left: auto; margin-right: auto;">
+        Turning restock guesswork into an evidenced call for independent online sellers.
+      </p>
+    </div>
+
+  </section>
+
+  <div data-include="footer"></div>
+
+  <script src="../components/header.js"></script>
+  <script src="../components/footer.js"></script>
+</body>
+</html>

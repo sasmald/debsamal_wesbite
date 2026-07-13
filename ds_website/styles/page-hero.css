@@ -1,0 +1,47 @@
+/* ============================================================
+   PAGE HERO — inner-page banner used on work/ai/about/contact
+   Smaller than the home hero; text-only, no portrait grid.
+   ============================================================ */
+
+.page-hero {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 72px var(--pad-x) 64px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero__eyebrow {
+  font: 600 12px var(--font-mono);
+  letter-spacing: .16em;
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+
+.page-hero__headline {
+  font: 400 52px/1.06 var(--font-serif);
+  letter-spacing: -.02em;
+  color: var(--ink);
+  max-width: 760px;
+  text-wrap: balance;
+}
+
+.page-hero__body {
+  font: 400 18px/1.62 var(--font-sans);
+  color: var(--sub);
+  margin-top: 22px;
+  max-width: 640px;
+}
+
+@media (max-width: 780px) {
+  .page-hero {
+    padding: 48px var(--pad-x) 40px;
+  }
+
+  .page-hero__headline {
+    font-size: 32px;
+  }
+
+  .page-hero__body {
+    font-size: 16px;
+  }
+}

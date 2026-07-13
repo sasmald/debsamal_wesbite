@@ -1,0 +1,57 @@
+/* ============================================================
+   ABOUT — "The constant was never a domain. It was a method."
+   Through-line section bridging proof stats → selected work.
+   ============================================================ */
+
+.about-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 92px var(--pad-x);
+  border-top: 1px solid var(--border);
+}
+
+/* about.html: page-hero already supplies a border-bottom for this seam */
+.page-hero + .about-section {
+  border-top: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.about-headline {
+  font: 400 46px/1.08 var(--font-serif);
+  letter-spacing: -.02em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.about-body-primary {
+  font: 400 18px/1.65 var(--font-sans);
+  color: var(--ink);
+}
+
+.about-body-secondary {
+  font: 400 17px/1.65 var(--font-sans);
+  color: var(--sub);
+  margin-top: 18px;
+}
+
+@media (max-width: 780px) {
+  .about-section {
+    padding: 56px var(--pad-x);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-headline {
+    font-size: 28px;
+  }
+}

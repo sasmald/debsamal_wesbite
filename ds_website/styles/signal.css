@@ -1,0 +1,155 @@
+/* ============================================================
+   SIGNAL — №006: podcast, teaching, advisory, speaking
+   ============================================================ */
+
+.signal-section {
+  background: var(--surface-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.signal-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 88px var(--pad-x);
+}
+
+.signal-heading {
+  font: 400 42px/1.08 var(--font-serif);
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin: 16px 0 0;
+}
+
+/* 3-column grid: podcast (large) + 2 stacked + 1 combined */
+.signal-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+/* Shared signal card */
+.signal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: transform var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+}
+
+.signal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -24px rgba(30, 50, 80, .35);
+}
+
+/* Podcast card: cobalt top accent */
+.signal-card--podcast {
+  border-top: 3px solid var(--cobalt);
+  text-decoration: none;
+  display: block;
+}
+
+.signal-card--podcast:hover {
+  box-shadow: 0 18px 36px -24px rgba(30, 50, 80, .4);
+}
+
+.signal-podcast__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.signal-podcast__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cobalt);
+  flex-shrink: 0;
+}
+
+.signal-podcast__label {
+  font: 600 11px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--cobalt);
+}
+
+.signal-podcast__title {
+  font: 700 24px var(--font-grotesk);
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin-top: 14px;
+}
+
+.signal-podcast__body {
+  font: 400 15px/1.55 var(--font-sans);
+  color: var(--sub);
+  margin: 10px 0 0;
+}
+
+.signal-podcast__link {
+  font: 600 13px var(--font-grotesk);
+  color: var(--cobalt);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 18px;
+  transition: color var(--duration) var(--ease);
+}
+
+.signal-podcast__link:hover {
+  color: var(--ink);
+}
+
+/* Stacked small cards column */
+.signal-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.signal-item__eyebrow {
+  font: 600 11px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+
+.signal-item__title {
+  font: 700 18px var(--font-grotesk);
+  color: var(--ink);
+  margin-top: 10px;
+  letter-spacing: -.01em;
+}
+
+.signal-item__body {
+  font: 400 13px/1.5 var(--font-sans);
+  color: var(--sub);
+  margin: 6px 0 0;
+}
+
+/* Divider inside a card */
+.signal-card__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 14px 0;
+}
+
+@media (max-width: 900px) {
+  .signal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .signal-inner {
+    padding: 56px var(--pad-x);
+  }
+
+  .signal-heading {
+    font-size: 28px;
+  }
+
+  .signal-grid {
+    grid-template-columns: 1fr;
+  }
+}

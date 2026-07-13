@@ -1,0 +1,48 @@
+/* ============================================================
+   AI — №004: On AI (dark 2-column: bold quote + body)
+   ============================================================ */
+
+.ai-section {
+  background: var(--dark);
+}
+
+.ai-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 88px var(--pad-x);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.ai-quote {
+  font: 400 38px/1.16 var(--font-serif);
+  letter-spacing: -.015em;
+  color: var(--paper);
+  text-wrap: balance;
+  margin: 18px 0 0;
+}
+
+.ai-body-primary {
+  font: 400 17px/1.65 var(--font-sans);
+  color: var(--dark-text);
+}
+
+.ai-body-secondary {
+  font: 400 16px/1.65 var(--font-sans);
+  color: var(--dark-sub);
+  margin-top: 18px;
+}
+
+@media (max-width: 780px) {
+  .ai-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 56px var(--pad-x);
+  }
+
+  .ai-quote {
+    font-size: 28px;
+  }
+}

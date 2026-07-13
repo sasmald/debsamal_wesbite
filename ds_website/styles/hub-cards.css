@@ -1,0 +1,83 @@
+/* ============================================================
+   HUB CARDS — home page navigation cards linking to sub-pages
+   ============================================================ */
+
+.hub-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 80px var(--pad-x);
+  border-top: 1px solid var(--border);
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.hub-card {
+  display: block;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px 24px;
+  transition: border-color var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease),
+              transform var(--duration) var(--ease);
+}
+
+.hub-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.hub-card__eyebrow {
+  font: 600 11px var(--font-mono);
+  letter-spacing: .14em;
+  color: var(--accent);
+}
+
+.hub-card__title {
+  font: 500 22px/1.1 var(--font-serif);
+  color: var(--ink);
+  margin-top: 12px;
+  letter-spacing: -.01em;
+}
+
+.hub-card__body {
+  font: 400 14px/1.55 var(--font-sans);
+  color: var(--sub);
+  margin-top: 10px;
+}
+
+.hub-card__link {
+  font: 600 11px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--accent);
+  display: inline-block;
+  margin-top: 18px;
+  transition: letter-spacing var(--duration) var(--ease);
+}
+
+.hub-card:hover .hub-card__link {
+  letter-spacing: .12em;
+}
+
+@media (max-width: 780px) {
+  .hub-section {
+    padding: 56px var(--pad-x);
+  }
+
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 980px) {
+  .hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

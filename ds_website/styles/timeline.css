@@ -1,0 +1,70 @@
+/* ============================================================
+   TIMELINE — experience rows shared by work.html and about.html.
+   work.html's row styling (200px date column, org/role/body type
+   scale) is the baseline; about.html reuses the same row component
+   in a brief variant (no .timeline-body paragraph).
+   ============================================================ */
+
+.timeline-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 72px var(--pad-x) 96px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-row:last-child {
+  border-bottom: none;
+}
+
+.timeline-date {
+  font: 600 12px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--sub);
+}
+
+.timeline-org {
+  font: 600 17px var(--font-grotesk);
+  color: var(--ink);
+}
+
+.timeline-org__note {
+  font-weight: 400;
+  color: var(--sub);
+}
+
+.timeline-role {
+  font: 500 13px var(--font-mono);
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.timeline-body {
+  font: 400 15px/1.6 var(--font-sans);
+  color: var(--sub);
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+@media (max-width: 780px) {
+  .timeline-inner {
+    padding: 48px var(--pad-x) 64px;
+  }
+
+  .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}

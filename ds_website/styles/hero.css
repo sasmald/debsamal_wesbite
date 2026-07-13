@@ -1,0 +1,103 @@
+/* ============================================================
+   HERO — headline, body, portrait
+   ============================================================ */
+
+/* Outer hero section: padding + kicker sit above the two-column grid */
+.hero-section {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 64px var(--pad-x) 64px;
+}
+
+.hero-kicker {
+  font: 500 13px var(--font-mono);
+  letter-spacing: .1em;
+  color: var(--sub);
+  margin-bottom: 22px;
+  text-wrap: balance;
+}
+
+/* Two-column grid: headline/body/actions vs. portrait.
+   align-items: start means the portrait top lines up exactly with the
+   headline top, since the kicker now lives outside this grid entirely. */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Left column */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-headline {
+  font: 400 64px/1.05 var(--font-serif);
+  letter-spacing: -.015em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.hero-body {
+  font: 400 18px/1.62 var(--font-sans);
+  color: var(--sub);
+  margin-top: 28px;
+  max-width: 600px;
+}
+
+/* CTAs + location */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.hero-location {
+  font: 500 11px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--sub);
+  margin-left: 6px;
+}
+
+/* Right column: portrait */
+.hero-portrait {
+  max-width: 380px;
+  width: 100%;
+  justify-self: end;
+}
+
+@media (max-width: 780px) {
+  .hero-section {
+    padding: 40px var(--pad-x) 48px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-headline {
+    font-size: 38px;
+  }
+
+  .hero-body {
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .hero-portrait {
+    max-width: 220px;
+    justify-self: start;
+    order: -1;
+  }
+}

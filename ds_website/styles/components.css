@@ -1,0 +1,237 @@
+/* ============================================================
+   COMPONENTS — reusable atoms shared across sections
+   ============================================================ */
+
+/* ---- Section eyebrow (// SECTION NAME) ---- */
+.eyebrow {
+  font: 600 12px var(--font-mono);
+  letter-spacing: .16em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.eyebrow--light {
+  color: var(--accent-2);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  font: 600 13px var(--font-grotesk);
+  letter-spacing: .04em;
+  padding: 15px 26px;
+  transition: background var(--duration) var(--ease),
+              color var(--duration) var(--ease),
+              transform var(--duration) var(--ease),
+              box-shadow var(--duration) var(--ease);
+  cursor: pointer;
+  border: none;
+}
+
+.btn--primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn--primary:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  padding: 14px 24px;
+}
+
+.btn--outline:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn--ghost-dark {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 24px;
+  padding: 12px 20px;
+}
+
+.btn--ghost-dark:hover {
+  filter: brightness(1.15);
+}
+
+/* ---- Arrow link ---- */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 12px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap var(--duration) var(--ease),
+              color var(--duration) var(--ease);
+}
+
+.link-arrow:hover {
+  gap: 13px;
+}
+
+/* ---- Badge / pill tag ---- */
+.badge {
+  display: inline-block;
+  font: 600 9px var(--font-mono);
+  letter-spacing: .06em;
+  padding: 5px 9px;
+  border-radius: 14px;
+  text-transform: uppercase;
+}
+
+.badge--accent {
+  background: var(--accent);
+  color: #fff;
+}
+
+.badge--dark {
+  background: rgba(26, 23, 20, .78);
+  color: var(--paper);
+}
+
+/* ---- Stat block (large number + label) ---- */
+.stat-block__value {
+  font: 500 26px var(--font-serif);
+  color: var(--accent);
+  letter-spacing: -.01em;
+}
+
+.stat-block__label {
+  font: 500 10px var(--font-mono);
+  letter-spacing: .08em;
+  color: var(--sub);
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+/* ---- Portrait placeholder (warm duotone frame) ---- */
+.portrait-frame {
+  position: relative;
+  isolation: isolate;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #2a1a0e;
+  box-shadow: var(--shadow-dark);
+  aspect-ratio: 4 / 5;
+}
+
+.portrait-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 40% center;
+}
+
+/* Subtle warm tint overlays — keep the palette without killing the photo */
+.portrait-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #3a2410;
+  mix-blend-mode: multiply;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.portrait-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #E9B877;
+  mix-blend-mode: screen;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portrait-frame__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(184, 110, 58, .1), rgba(26, 18, 10, .42));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.portrait-frame__credit {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  font: 600 9px var(--font-mono);
+  letter-spacing: .12em;
+  color: #f3d9b8;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.portrait-frame__placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 500 11px var(--font-mono);
+  letter-spacing: .12em;
+  color: rgba(243, 217, 184, .4);
+  text-transform: uppercase;
+  z-index: 0;
+}
+
+/* ---- Footer (global, injected by footer.js) ---- */
+.site-footer {
+  background: var(--dark);
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 40px var(--pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-brand {
+  font: 500 16px var(--font-serif);
+  letter-spacing: -.01em;
+  color: var(--paper);
+}
+
+.footer-sub {
+  font: 500 11px var(--font-mono);
+  color: var(--dark-sub);
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+
+.footer-link {
+  font: 500 11px var(--font-mono);
+  color: var(--dark-sub);
+  text-decoration: none;
+  transition: color var(--duration) var(--ease);
+}
+
+.footer-link:hover {
+  color: var(--paper);
+}

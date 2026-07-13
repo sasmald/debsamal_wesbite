@@ -1,0 +1,61 @@
+/* ============================================================
+   TOKENS — design system foundation
+   All CSS custom properties. No rules here, only variables.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&family=Libre+Franklin:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+  /* ---- Color: core ---- */
+  --ink:          #1D1F24;
+  --paper:        #F4F1EC;
+  --surface:      #FFFFFF;
+  --surface-2:    #FBF9F5;
+  --sub:          #6E6A62;
+  --border:       #E5DECF;
+  --hair:         #EDE7DB;
+
+  /* ---- Color: accent (warm orange) ---- */
+  --accent:       #B86E3A;
+  --accent-2:     #E0A45E;
+  --accent-ink:   #FFFFFF;
+
+  /* ---- Color: dark sections ---- */
+  --dark:         #1A1714;
+  --dark-surface: #241F1A;
+  --dark-sub:     #A39A8E;
+  --dark-text:    #CFC7BB;
+
+  /* ---- Color: cobalt (podcast / link accent) ---- */
+  --cobalt:       #2E6FB7;
+
+  /* ---- Typography ---- */
+  --font-serif:   'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans:    'Libre Franklin', system-ui, -apple-system, sans-serif;
+  --font-mono:    'IBM Plex Mono', 'Menlo', 'Courier New', monospace;
+  --font-grotesk: 'Space Grotesk', system-ui, sans-serif;
+
+  /* ---- Layout ---- */
+  --max-w:        1200px;
+  --pad-x:        44px;
+
+  /* ---- Radius ---- */
+  --radius-sm:    6px;
+  --radius-md:    10px;
+  --radius-lg:    14px;
+  --radius-xl:    20px;
+
+  /* ---- Shadow ---- */
+  --shadow-card:  0 20px 44px -28px rgba(60, 35, 15, .4);
+  --shadow-dark:  0 20px 54px -22px rgba(60, 35, 15, .5);
+
+  /* ---- Transition ---- */
+  --ease:         cubic-bezier(.22, 1, .36, 1);
+  --duration:     220ms;
+}
+
+@media (max-width: 780px) {
+  :root {
+    --pad-x: 20px;
+  }
+}
