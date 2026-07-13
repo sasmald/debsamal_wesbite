@@ -2,7 +2,7 @@
    HEADER COMPONENT
    Injects the sticky nav into every page.
    Usage: <div data-include="header"></div>
-          <script src="../components/header.js"></script>
+          <script src="components/header.js"></script>
    ============================================================ */
 
 (function () {

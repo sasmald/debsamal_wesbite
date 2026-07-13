@@ -14,7 +14,11 @@ Static HTML/CSS/JS site — no build step, no package manager, no test suite. To
 npx serve ds_website
 ```
 
-or use VS Code's Live Server extension pointed at `ds_website/`. Then open `pages/index.html` (or any other page under `pages/`).
+or use VS Code's Live Server extension pointed at `ds_website/`. Then open `index.html` (or any other page) at the root of `ds_website/`.
+
+## Deployment
+
+Live at debashishsasmal.com (dsasmal.com redirects to it via a Namecheap domain forward, not hosted). `.github/workflows/deploy.yml` publishes the `ds_website/` folder to GitHub Pages on every push to `main` (no build step, just a static-file publish). `ds_website/CNAME` pins the custom domain for Pages. DNS (A records for the apex domain to GitHub Pages' IPs) lives in Namecheap, not in this repo.
 
 ## Repository layout
 
@@ -37,13 +41,13 @@ star_stories/                             — source material: detailed STAR-for
   everything by function ("a tele-critical-care platform," "a cognitive/ADRD screening product," "a
   strategic acquirer," "the market-leading EHR"). See Redaction policy below.
 
-ds_website/                               — active build (start here)
-  pages/
-    index.html      — Home / hero hub
-    work.html       — Case studies (accordion) + experience timeline
-    ai.html         — AI point of view + personal builds
-    about.html      — Through-line + Signal (podcast/speaking/advisory) + experience
-    contact.html    — Contact CTA page
+ds_website/                               — active build (start here); published as-is to GitHub Pages
+  index.html      — Home / hero hub
+  work.html       — Case studies (accordion) + experience timeline
+  ai.html         — AI point of view + personal builds
+  about.html      — Through-line + Signal (podcast/speaking/advisory) + experience
+  contact.html    — Contact CTA page
+  CNAME           — Pins the custom domain (debashishsasmal.com) for GitHub Pages
   components/
     header.js       — Shared nav (injected via data-include="header"); also renders a mobile
                        hamburger toggle (.nav-toggle / .nav-menu) below the 780px breakpoint
@@ -105,8 +109,8 @@ Header and footer are injected by JS components — not hardcoded in each page:
 <div data-include="header"></div>
 <!-- page content -->
 <div data-include="footer"></div>
-<script src="../components/header.js"></script>
-<script src="../components/footer.js"></script>
+<script src="components/header.js"></script>
+<script src="components/footer.js"></script>
 ```
 
 `header.js` auto-highlights the active nav link by matching `window.location.pathname` filename to `data-page` attributes on nav links, and wires up the mobile hamburger toggle (`.nav-toggle` shows/hides `.nav-menu` below 780px).

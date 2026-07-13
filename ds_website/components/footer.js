@@ -2,7 +2,7 @@
    FOOTER COMPONENT
    Injects the site footer into every page.
    Usage: <div data-include="footer"></div>
-          <script src="../components/footer.js"></script>
+          <script src="components/footer.js"></script>
    ============================================================ */
 
 (function () {
