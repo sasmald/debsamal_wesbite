@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="styles/page-hero.css">
   <link rel="stylesheet" href="styles/ai.css">
   <link rel="stylesheet" href="styles/buildlog.css">
+
+  <!-- Pic-to-Plate build card uses its own brand type, separate from the site's type system -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -78,12 +82,17 @@
 
     <!-- Picture-to-Plate -->
     <div class="buildlog-card" style="margin-top: 40px;">
-      <div class="buildlog-visual buildlog-visual--logo">
-        <img src="imgs/pictoplate-logo.png" alt="Picture-to-Plate logo">
+      <div class="ptp-hero">
+        <div class="ptp-eyebrow">
+          <span class="ptp-dot"></span>
+          KITCHEN COMPANION
+        </div>
+        <h1 class="ptp-title">Pic-to-Plate<span class="ptp-dot ptp-dot--period"></span></h1>
+        <p class="ptp-subtitle">Snap what's in the fridge. Cook what's on the plate.</p>
       </div>
       <div class="buildlog-content">
         <p class="eyebrow">APPLIED AI · VISION + GENERATION · LIVE ON iOS</p>
-        <h3 class="buildlog-content__title">Picture-to-Plate</h3>
+        <h3 class="buildlog-content__title">Pic-to-Plate</h3>
         <p class="buildlog-content__body">
           An image-to-recipe app, live on the App Store as an MVP. Photograph
           what's in your fridge or pantry, get a recipe back. I built it to see where vision
@@ -99,6 +108,20 @@
           and the payoff is a curated shortlist (3 almost-there, 3 a short trip,
           3 worth planning around), not endless recipes.
         </p>
+        <div class="buildlog-stats">
+          <div class="buildlog-stat">
+            <div class="buildlog-stat__value">2 mo</div>
+            <div class="buildlog-stat__label">concept to App Store</div>
+          </div>
+          <div class="buildlog-stat">
+            <div class="buildlog-stat__value">2</div>
+            <div class="buildlog-stat__label">platforms, 1 codebase</div>
+          </div>
+          <div class="buildlog-stat">
+            <div class="buildlog-stat__value">27</div>
+            <div class="buildlog-stat__label">decisions documented</div>
+          </div>
+        </div>
         <a href="https://apps.apple.com/us/app/pic-to-plate/id6784744692" class="btn btn--ghost-dark" style="margin-top: 24px;">
           Get it on the App Store →
         </a>
@@ -118,7 +141,7 @@
         </div>
       </div>
       <div class="buildlog-content">
-        <p class="eyebrow">APPLIED AI · PRODUCT ORCHESTRATION LAYER</p>
+        <p class="eyebrow">APPLIED AI · PRODUCT ORCHESTRATION LAYER · IN PROGRESS</p>
         <h3 class="buildlog-content__title">Keystone AI</h3>
         <p class="buildlog-content__body">
           A human-in-the-loop orchestration layer for taking an idea to a validated
@@ -132,7 +155,7 @@
           contribution. Remove one to move faster and you ship something broken.
         </p>
         <a href="https://github.com/sasmald/keystone" class="btn btn--ghost-dark" target="_blank" rel="noopener" style="margin-top: 24px;">
-          View on GitHub →
+          Follow progress on GitHub →
         </a>
       </div>
     </div>

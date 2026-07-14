@@ -135,6 +135,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 40% center;
+  opacity: 1;
 }
 
 /* Subtle warm tint overlays — keep the palette without killing the photo */
@@ -144,7 +145,7 @@
   inset: 0;
   background: #3a2410;
   mix-blend-mode: multiply;
-  opacity: 0.15;
+  opacity: 0.075;
   pointer-events: none;
   z-index: 1;
 }
@@ -155,7 +156,7 @@
   inset: 0;
   background: #E9B877;
   mix-blend-mode: screen;
-  opacity: 0.08;
+  opacity: 0.04;
   pointer-events: none;
   z-index: 2;
 }
@@ -163,7 +164,7 @@
 .portrait-frame__gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(184, 110, 58, .1), rgba(26, 18, 10, .42));
+  background: linear-gradient(160deg, rgba(184, 110, 58, .05), rgba(26, 18, 10, .21));
   pointer-events: none;
   z-index: 3;
 }

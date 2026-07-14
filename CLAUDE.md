@@ -64,7 +64,10 @@ ds_website/                               — active build (start here); publish
     about.css       — Through-line section (shared by index.html and about.html)
     method.css      — 4-step 2×2 grid (signature section, lives on home; 1-col under 780px)
     ai.css          — Dark 2-col AI POV section (stacks under 780px)
-    buildlog.css    — Horizontal build log cards (Picture-to-Plate, Keystone AI)
+    buildlog.css    — Horizontal build log cards (Pic-to-Plate, Keystone AI) + .ptp-hero, a
+                       live-type brand card for Pic-to-Plate using its own Fraunces/JetBrains
+                       Mono type (loaded in ai.html's <head>), intentionally outside the site's
+                       4-font system since it's presenting an external product's own brand
     signal.css      — Podcast + credibility grid (stacks under 900px)
     contact.css     — Contact CTA section + site footer
     accordion.css   — Expand/collapse case studies on work.html; 3-col Bet/Call/What-Happened
@@ -76,7 +79,6 @@ ds_website/                               — active build (start here); publish
                        work.html (full, baseline) and about.html (brief variant, no body copy)
   imgs/
     DS1.png              — Portrait photo (used in hero, object-position: 40% center)
-    pictoplate-logo.png  — Picture-to-Plate build card logo
 ```
 
 ## Design system
@@ -121,9 +123,9 @@ Header and footer are injected by JS components — not hardcoded in each page:
 
 **Home (index.html):** Hero → Path strip → Dark "3 case studies" teaser grid (each card links to `work.html#<id>`) → Method (signature section) → Through-line → 4 hub cards
 
-**Work (work.html):** Page hero → Accordion case studies (Acute-Care Virtual Platform / Cognitive Screening Platform / Chronic-Pain Care Venture, click + to expand; each follows Bet → Call → What Happened → Stats → Proves) → Experience timeline. Deep-linking a case (`work.html#platform-exit`, `#workflow-investment`, `#venture-origination`) auto-expands and scrolls to it via the inline script at the bottom of the file.
+**Work (work.html):** Page hero → Accordion case studies (Chronic-Pain Care Venture / Cognitive Screening Platform / Acute-Care Virtual Platform, click + to expand; each follows Bet → Call → What Happened → Stats → Proves) → Experience timeline. Deep-linking a case (`work.html#venture-origination`, `#workflow-investment`, `#platform-exit`) auto-expands and scrolls to it via the inline script at the bottom of the file.
 
-**AI (ai.html):** Page hero → Dark POV section (real POV, no longer a strawman) → Build cards: Picture-to-Plate (shipped, live on the App Store) + Keystone AI (shipped, on GitHub, six-stage circular indicator standing in for a diagram) + a "Next up" placeholder for Trendshelf
+**AI (ai.html):** Page hero → Dark POV section (real POV, no longer a strawman) → Build cards: Pic-to-Plate (shipped, live on the App Store) + Keystone AI (in progress, on GitHub, six-stage circular indicator standing in for a diagram) + a "Next up" placeholder for Trendshelf
 
 **About (about.html):** Page hero → Through-line narrative → Signal section (podcast/CMU-BPUT education/speaking-advisory) → Brief experience timeline
 
@@ -144,9 +146,9 @@ Header and footer are injected by JS components — not hardcoded in each page:
 **Employment status:** Debashish is no longer employed at UPMC Enterprises (tenure was 2020–2026). All site copy must use past tense for UPMC-era work ("architected," "led," "meant") — never present tense ("leads," "today," "currently") that implies ongoing employment there. The Chronic-Pain Care Venture's date range on work.html should read "2024–2026," not "2024–Present."
 
 **Case studies (in narrative order on work.html):**
-1. **Acute-Care Virtual Platform** — internal tele-critical-care tool → acquisition by a strategic acquirer (lead story). Key figures: ≈92% response-time reduction, ≈3× provider capacity, $8-9M+ total financial impact, ≈3× value at exit.
+1. **Chronic-Pain Care Venture** — 0→1 venture architected inside UPMC Enterprises, chronic-pain care model (dates: "2024–2026"), lead story. Key figures: 100+ practices via single-signature enterprise adoption, 67% fewer hospitalizations (one cohort; source doc has a second cohort at 59%/31% if more precision is ever needed).
 2. **Cognitive Screening Platform** — constraint was workflow, not science; invested, integrated into the market-leading EHR, advised as a board observer. Key figures: 90% onboarding improvement, ~2% denial rate, ~$400K early revenue generated, ~$3.49M/yr recoverable reimbursement (existing revenue recovered by fixing the workflow, not new revenue, keep that distinction in any copy).
-3. **Chronic-Pain Care Venture** — 0→1 venture architected inside UPMC Enterprises, chronic-pain care model (dates: "2024–2026"). Key figures: 100+ practices via single-signature enterprise adoption, 67% fewer hospitalizations (one cohort; source doc has a second cohort at 59%/31% if more precision is ever needed).
+3. **Acute-Care Virtual Platform** — internal tele-critical-care tool → acquisition by a strategic acquirer. Key figures: ≈92% response-time reduction, ≈3× provider capacity, $8-9M+ total financial impact, ≈3× value at exit.
 
 Index.html's teaser cards and work.html's accordion must stay numerically consistent (same figures, same case order/numbering 01→02→03 top to bottom) — a prior bug had the two pages showing contradicting numbers and reversed tag numbering; watch for this class of regression whenever one page's copy changes without the other.
 
