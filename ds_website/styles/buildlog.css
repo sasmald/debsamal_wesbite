@@ -1,5 +1,5 @@
 /* ============================================================
-   BUILD LOG — №005: Picture-to-Plate (horizontal card)
+   BUILD LOG — №005: Pic-to-Plate + Keystone AI (horizontal cards)
    ============================================================ */
 
 .buildlog-section {
@@ -57,57 +57,30 @@
 /* Variant: no photo underneath, so skip the duotone treatment
    built for tinting a screenshot (it washes out to solid color
    with nothing beneath it) */
-.buildlog-visual--stages::before,
-.buildlog-visual--stages::after {
+.buildlog-visual--icon::before,
+.buildlog-visual--icon::after {
   content: none;
 }
 
-.buildlog-visual__placeholder {
-  position: absolute;
-  inset: 0;
+/* Keystone AI: the product's own brand mark, centered on its brand's
+   Deep Navy surface (#081320) rather than the site's warm-dark tone */
+.buildlog-visual--icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 500 11px var(--font-mono);
-  letter-spacing: .1em;
-  color: rgba(243, 217, 184, .35);
-  text-transform: uppercase;
+  background: #081320;
 }
 
-/* Keystone AI: six-stage indicator standing in for a diagram */
-.keystone-stages {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.keystone-stages__step {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1.5px solid rgba(224, 164, 94, .55);
-  font: 500 11px var(--font-mono);
-  letter-spacing: .04em;
-  color: rgba(224, 164, 94, .55);
-  flex-shrink: 0;
+.buildlog-visual--icon .buildlog-visual__icon-img {
+  position: static;
+  width: auto;
+  height: 96px;
+  filter: none;
 }
 
 @media (max-width: 780px) {
-  .keystone-stages {
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 16px;
-  }
-
-  .keystone-stages__step {
-    width: 28px;
-    height: 28px;
+  .buildlog-visual--icon .buildlog-visual__icon-img {
+    height: 72px;
   }
 }
 

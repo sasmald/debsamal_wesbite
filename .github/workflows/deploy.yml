@@ -22,8 +22,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # HOLDING PAGE: deploying ds_website-holding/ instead of ds_website/
+      # while work.html content is being revised. To go live with the real
+      # site again, change this path back to: ds_website
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ds_website
+          path: ds_website-holding
       - id: deployment
         uses: actions/deploy-pages@v4

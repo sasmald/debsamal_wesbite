@@ -125,7 +125,7 @@ Header and footer are injected by JS components — not hardcoded in each page:
 
 **Work (work.html):** Page hero → Accordion case studies (Chronic-Pain Care Venture / Cognitive Screening Platform / Acute-Care Virtual Platform, click + to expand; each follows Bet → Call → What Happened → Stats → Proves) → Experience timeline. Deep-linking a case (`work.html#venture-origination`, `#workflow-investment`, `#platform-exit`) auto-expands and scrolls to it via the inline script at the bottom of the file.
 
-**AI (ai.html):** Page hero → Dark POV section (real POV, no longer a strawman) → Build cards: Pic-to-Plate (shipped, live on the App Store) + Keystone AI (in progress, on GitHub, six-stage circular indicator standing in for a diagram) + a "Next up" placeholder for Trendshelf
+**AI (ai.html):** Page hero → Dark POV section (real POV, no longer a strawman) → Build cards: Pic-to-Plate (shipped, live on the App Store) + Keystone AI (in progress, on GitHub, uses its own brand mark, imgs/keystone-ai-icon.svg) + a "Next up" placeholder for Trendshelf
 
 **About (about.html):** Page hero → Through-line narrative → Signal section (podcast/CMU-BPUT education/speaking-advisory) → Brief experience timeline
 
@@ -157,5 +157,4 @@ Index.html's teaser cards and work.html's accordion must stay numerically consis
 - [ ] Portrait `object-position` is `40% center` — adjust further if needed
 - [ ] Verify all case study figures (including the newer STAR-sourced ones: $8-9M+, $3.49M, 67% hospitalizations, etc.) are publicly attributable before launch
 - [ ] "Next up: Trendshelf" placeholder on ai.html — fill when next project ships
-- [ ] Consider a real diagram image for the Keystone AI build card (currently a stylized six-stage circle indicator, not a literal diagram)
 - [ ] Do a real-device mobile QA pass (hamburger menu, all breakpoints) before launch — the responsive pass was done in-browser/devtools, not verified on physical devices yet

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="270" viewBox="0 0 900 270" role="img" aria-label="Keystone AI horizontal logo">
+    <title>Keystone AI horizontal logo</title>
+    <defs>
+      <linearGradient id="brassGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E2BA68"/>
+        <stop offset="58%" stop-color="#D2A653"/>
+        <stop offset="100%" stop-color="#B9832F"/>
+      </linearGradient>
+    </defs>
+    <rect width="100%" height="100%" fill="#081320"/>
+    <g transform="translate(38 20) scale(1.0)">
+      <path d="M 26 170 L 12 170 L 1 48 L 25 48 L 21 10 L 99 10 L 95 48 L 119 48 L 108 170 L 94 170" fill="none" stroke="#F4F0E7" stroke-width="8" stroke-linejoin="miter" stroke-linecap="square"/>
+      <path d="M 42 54 L 78 54 L 77 66 L 84 70 L 72 145 L 48 145 L 36 70 L 43 66 Z" fill="url(#brassGradient)"/>
+      <line x1="60" y1="145" x2="60" y2="171" stroke="#D2A653" stroke-width="3.2" stroke-linecap="square"/>
+    </g><text x="205" y="128" fill="#F4F0E7" font-family="Inter Display, Inter, Arial, sans-serif" font-size="69" font-weight="300" letter-spacing="-1.3">Keystone AI</text><text x="209" y="181" fill="#D2A653" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="2.2">HUMAN JUDGMENT. AGENT ORCHESTRATION.</text>
+        <text x="209" y="213" fill="#D2A653" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="2.2">VALIDATED IMPACT.</text>
+    </svg>

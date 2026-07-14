@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="220" viewBox="0 0 160 220" role="img" aria-label="Keystone AI logo">
+    <title>Keystone AI logo</title>
+    <defs>
+      <linearGradient id="brassGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#E2BA68"/>
+        <stop offset="58%" stop-color="#D2A653"/>
+        <stop offset="100%" stop-color="#B9832F"/>
+      </linearGradient>
+    </defs>
+    
+    <g transform="translate(20 20)">
+      <path d="M 26 170 L 12 170 L 1 48 L 25 48 L 21 10 L 99 10 L 95 48 L 119 48 L 108 170 L 94 170" fill="none" stroke="#F4F0E7" stroke-width="8" stroke-linejoin="miter" stroke-linecap="square"/>
+      <path d="M 42 54 L 78 54 L 77 66 L 84 70 L 72 145 L 48 145 L 36 70 L 43 66 Z" fill="url(#brassGradient)"/>
+      <line x1="60" y1="145" x2="60" y2="171" stroke="#D2A653" stroke-width="3.2" stroke-linecap="square"/>
+    </g>
+    </svg>
