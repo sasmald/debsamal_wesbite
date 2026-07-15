@@ -135,6 +135,10 @@
     display: flex;
   }
 
+  .nav-logo__tagline {
+    display: none;
+  }
+
   .nav-menu {
     position: absolute;
     top: 72px;
