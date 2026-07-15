@@ -18,9 +18,7 @@ or use VS Code's Live Server extension pointed at `ds_website/`. Then open `inde
 
 ## Deployment
 
-Live at debashishsasmal.com (dsasmal.com redirects to it via a Namecheap domain forward, not hosted). `.github/workflows/deploy.yml` publishes a folder to GitHub Pages on every push to `main` (no build step, just a static-file publish). DNS (A records for the apex domain to GitHub Pages' IPs) lives in Namecheap, not in this repo.
-
-**Currently deployed: `ds_website-holding/` (a temporary single-page holding page), not `ds_website/`.** The workflow's `path:` was pointed at the holding page while `work.html` content is being revised; see the comment in `deploy.yml`. To go live with the real site again, change that path back to `ds_website`. `ds_website-holding/CNAME` (not `ds_website/CNAME`) pins the custom domain while the holding page is live.
+Live at debashishsasmal.com (dsasmal.com redirects to it via a Namecheap domain forward, not hosted). `.github/workflows/deploy.yml` publishes `ds_website/` to GitHub Pages on every push to `main` (no build step, just a static-file publish). DNS (A records for the apex domain to GitHub Pages' IPs) lives in Namecheap, not in this repo. `ds_website/CNAME` pins the custom domain.
 
 ## Repository layout
 
