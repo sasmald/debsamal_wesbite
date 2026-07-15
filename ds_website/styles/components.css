@@ -123,7 +123,7 @@
   isolation: isolate;
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: #2a1a0e;
+  background: #0e1a1c;
   box-shadow: var(--shadow-dark);
   aspect-ratio: 4 / 5;
 }
@@ -138,12 +138,12 @@
   opacity: 1;
 }
 
-/* Subtle warm tint overlays — keep the palette without killing the photo */
+/* Subtle mineral tint overlays — keep the palette without killing the photo */
 .portrait-frame::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: #3a2410;
+  background: #10201f;
   mix-blend-mode: multiply;
   opacity: 0.075;
   pointer-events: none;
@@ -154,7 +154,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #E9B877;
+  background: #C3A66B;
   mix-blend-mode: screen;
   opacity: 0.04;
   pointer-events: none;
@@ -164,7 +164,7 @@
 .portrait-frame__gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(184, 110, 58, .05), rgba(26, 18, 10, .21));
+  background: linear-gradient(160deg, rgba(47, 107, 98, .05), rgba(15, 20, 18, .21));
   pointer-events: none;
   z-index: 3;
 }
@@ -175,7 +175,7 @@
   bottom: 14px;
   font: 600 9px var(--font-mono);
   letter-spacing: .12em;
-  color: #f3d9b8;
+  color: #e2d3ae;
   pointer-events: none;
   z-index: 4;
 }

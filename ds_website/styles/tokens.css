@@ -7,24 +7,24 @@
 
 :root {
   /* ---- Color: core ---- */
-  --ink:          #1D1F24;
-  --paper:        #F4F1EC;
+  --ink:          #20272D;
+  --paper:        #F4F1EA;
   --surface:      #FFFFFF;
-  --surface-2:    #FBF9F5;
-  --sub:          #6E6A62;
-  --border:       #E5DECF;
-  --hair:         #EDE7DB;
+  --surface-2:    #FBFAF5;
+  --sub:          #5B6469;
+  --border:       #DED9C9;
+  --hair:         #EAE5D8;
 
-  /* ---- Color: accent (warm orange) ---- */
-  --accent:       #B86E3A;
-  --accent-2:     #E0A45E;
+  /* ---- Color: accent (mineral teal / brass) ---- */
+  --accent:       #2F6B62;
+  --accent-2:     #C3A66B;
   --accent-ink:   #FFFFFF;
 
   /* ---- Color: dark sections ---- */
-  --dark:         #1A1714;
-  --dark-surface: #241F1A;
-  --dark-sub:     #A39A8E;
-  --dark-text:    #CFC7BB;
+  --dark:         #172126;
+  --dark-surface: #1F2A30;
+  --dark-sub:     #8FA0A6;
+  --dark-text:    #D9E0DC;
 
   /* ---- Color: cobalt (podcast / link accent) ---- */
   --cobalt:       #2E6FB7;
@@ -46,8 +46,8 @@
   --radius-xl:    20px;
 
   /* ---- Shadow ---- */
-  --shadow-card:  0 20px 44px -28px rgba(60, 35, 15, .4);
-  --shadow-dark:  0 20px 54px -22px rgba(60, 35, 15, .5);
+  --shadow-card:  0 20px 44px -28px rgba(15, 25, 28, .4);
+  --shadow-dark:  0 20px 54px -22px rgba(15, 25, 28, .5);
 
   /* ---- Transition ---- */
   --ease:         cubic-bezier(.22, 1, .36, 1);
