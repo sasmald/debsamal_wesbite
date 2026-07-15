@@ -11,6 +11,20 @@
   gap: 0;
 }
 
+.metrics-key {
+  font: 400 13px var(--font-sans);
+  font-style: italic;
+  color: var(--sub);
+  margin-top: 14px;
+  max-width: 640px;
+}
+
+.metrics-key strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .accordion-item {
   border-bottom: 1px solid var(--border);
 }
@@ -74,6 +88,32 @@
   color: var(--sub);
   margin-top: 4px;
   max-width: 640px;
+}
+
+/* At-a-glance scope strip: visible collapsed, sits under the summary */
+.accordion-trigger__scan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 14px;
+}
+
+.scan-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.scan-item__label {
+  font: 600 10px var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--sub);
+}
+
+.scan-item__value {
+  font: 500 13px var(--font-sans);
+  color: var(--ink);
 }
 
 /* Expand icon */
@@ -227,6 +267,11 @@
   .accordion-trigger__meta {
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .accordion-trigger__scan {
+    gap: 14px;
+    margin-top: 12px;
   }
 
   .accordion-stats {

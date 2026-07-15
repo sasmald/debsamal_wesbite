@@ -33,6 +33,19 @@
   flex-direction: column;
 }
 
+.hero-role {
+  display: inline-flex;
+  width: fit-content;
+  font: 600 12.5px var(--font-mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  padding: 7px 16px;
+  margin-bottom: 20px;
+}
+
 .hero-headline {
   font: 400 64px/1.05 var(--font-serif);
   letter-spacing: -.015em;
@@ -84,6 +97,12 @@
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .hero-role {
+    font-size: 11px;
+    padding: 6px 13px;
+    margin-bottom: 16px;
   }
 
   .hero-headline {

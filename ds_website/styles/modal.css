@@ -1,0 +1,168 @@
+/* ============================================================
+   MODAL — generic overlay used by the "Learn more" build details
+   (currently just Pic-to-Plate on ai.html, written reusable)
+   ============================================================ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 24, 22, .55);
+}
+
+.modal__panel {
+  position: relative;
+  max-width: 720px;
+  max-height: 84vh;
+  margin: 6vh auto 0;
+  overflow-y: auto;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-dark);
+  padding: 48px 48px 44px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--sub);
+  font-size: 15px;
+  cursor: pointer;
+  transition: color var(--duration) var(--ease), border-color var(--duration) var(--ease);
+}
+
+.modal__close:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.modal__title {
+  font: 400 32px/1.15 var(--font-serif);
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 14px 0 0;
+  max-width: 560px;
+}
+
+.modal__lede {
+  font: 400 17px/1.6 var(--font-sans);
+  color: var(--sub);
+  margin: 18px 0 0;
+  max-width: 560px;
+}
+
+.modal__section {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--hair);
+}
+
+.modal__label {
+  font: 600 11px var(--font-mono);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.modal__text {
+  font: 400 15px/1.65 var(--font-sans);
+  color: var(--ink);
+  margin-top: 10px;
+}
+
+.modal__text--mono {
+  font: 400 13px/1.7 var(--font-mono);
+  color: var(--sub);
+}
+
+.modal__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.modal__table td {
+  padding: 12px 0;
+  border-top: 1px solid var(--hair);
+  font: 400 14px/1.55 var(--font-sans);
+  vertical-align: top;
+}
+
+.modal__table td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+  width: 34%;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+
+.modal__table td:last-child {
+  color: var(--sub);
+}
+
+.modal__screens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.modal__screens img {
+  flex: 0 1 140px;
+  width: 140px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 780px) {
+  .modal__panel {
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+    padding: 72px 24px 48px;
+  }
+
+  .modal__title {
+    font-size: 26px;
+  }
+
+  .modal__table td:first-child {
+    white-space: normal;
+    width: auto;
+  }
+
+  .modal__table td {
+    display: block;
+    padding: 4px 0;
+    border-top: none;
+  }
+
+  .modal__table tr {
+    display: block;
+    padding: 12px 0;
+    border-top: 1px solid var(--hair);
+  }
+
+  .modal__screens img {
+    flex: 0 1 110px;
+    width: 110px;
+  }
+}

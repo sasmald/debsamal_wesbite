@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="styles/page-hero.css">
   <link rel="stylesheet" href="styles/ai.css">
   <link rel="stylesheet" href="styles/buildlog.css">
+  <link rel="stylesheet" href="styles/modal.css">
 
   <!-- Pic-to-Plate build card uses its own brand type, separate from the site's type system -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,18 +113,12 @@
         <h3 class="buildlog-content__title">Pic-to-Plate</h3>
         <p class="buildlog-content__body">
           An image-to-recipe app, live on the App Store as an MVP. Photograph
-          what's in your fridge or pantry, get a recipe back. I built it to see where vision
-          models are reliable and where they hallucinate, and what that means for
-          product decisions in domains where the failure mode matters. It's also
-          where I'm capturing real usage data on where those failure modes
-          actually show up.
-        </p>
-        <p style="font: 400 14px/1.55 var(--font-sans); color: var(--sub); margin-top: 14px; max-width: 460px;">
-          What it taught me: the model already handles the vision and the
-          generation. What it can't do alone is remember your pantry and weigh
-          that against what you're in the mood for, that's the workflow layer,
-          and the payoff is a curated shortlist (3 almost-there, 3 a short trip,
-          3 worth planning around), not endless recipes.
+          what's in your fridge, get a recipe back. I built it to see where vision
+          models are reliable versus where they hallucinate, and to learn what
+          the model can't do alone: remember your pantry and weigh it against
+          what you're in the mood for. That workflow layer is why the app
+          returns a curated shortlist (3 almost-there, 3 a short trip, 3 worth
+          planning around) instead of endless recipes.
         </p>
         <div class="buildlog-stats">
           <div class="buildlog-stat">
@@ -139,9 +134,103 @@
             <div class="buildlog-stat__label">decisions documented</div>
           </div>
         </div>
-        <a href="https://apps.apple.com/us/app/pic-to-plate/id6784744692" class="btn btn--ghost-dark" style="margin-top: 24px;">
-          Get it on the App Store →
-        </a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+          <a href="https://apps.apple.com/us/app/pic-to-plate/id6784744692" class="btn btn--ghost-dark">
+            Get it on the App Store →
+          </a>
+          <button type="button" class="btn btn--outline" data-modal-open="ptp-modal">
+            Learn more →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pic-to-Plate · "Learn more" overlay -->
+    <div class="modal" id="ptp-modal" aria-hidden="true">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="ptp-modal-title">
+        <button type="button" class="modal__close" data-modal-close aria-label="Close">✕</button>
+
+        <p class="eyebrow">PIC-TO-PLATE · INSIDE THE BUILD</p>
+        <h2 id="ptp-modal-title" class="modal__title">Solo, concept to the App Store, in two months.</h2>
+        <p class="modal__lede">
+          Product, design, and full-stack engineering, one person, one thesis:
+          the friction in "what's for dinner" isn't ideas, it's not knowing
+          what you already have.
+        </p>
+
+        <div class="modal__section">
+          <p class="modal__label">The bet</p>
+          <p class="modal__text">
+            Most recipe apps assume you already have a shopping list. Pic-to-Plate
+            treats the pantry as a persistent model, not a one-off input, so it
+            gets more useful with every session instead of starting over each
+            time. Recipes surface across three effort tiers, Ready to Cook,
+            Almost There, Go Shopping, instead of a single yes/no match, so a
+            user who'd otherwise abandon at "you need 8 more ingredients" sees
+            three things they can cook tonight.
+          </p>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">Scope decisions for v1</p>
+          <table class="modal__table">
+            <tbody>
+              <tr>
+                <td>No image storage</td>
+                <td>Photos are processed and discarded, not kept, avoiding storage and privacy overhead before the model was validated.</td>
+              </tr>
+              <tr>
+                <td>No OAuth</td>
+                <td>Email/password covers a soft launch; OAuth's redirect handling wasn't worth the surface area yet.</td>
+              </tr>
+              <tr>
+                <td>2 regenerations/day</td>
+                <td>Keeps API cost predictable during validation without blocking the core value.</td>
+              </tr>
+              <tr>
+                <td>Desktop-first web</td>
+                <td>Mobile responsive deferred so early web time went into the product experience, not breakpoints.</td>
+              </tr>
+              <tr>
+                <td>Feedback widget, soft-launch only</td>
+                <td>Good signal during validation, marked for removal at public launch, no permanent debt.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">One decision, in detail</p>
+          <p class="modal__text">
+            Recipe generation takes 20-30 seconds. If nothing about your
+            ingredients or preferences has changed since the last run,
+            regenerating is wasted latency. Ingredients and preferences are
+            hashed into a fingerprint; a matching fingerprint returns the
+            cached result instantly. It's a small decision, but it's the
+            difference between the app feeling instant on a second look and
+            feeling slow every time.
+          </p>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">Stack</p>
+          <p class="modal__text modal__text--mono">
+            Claude (vision + text) · FastAPI · Supabase (Postgres, Auth) ·
+            React + TypeScript (web) · Expo / React Native (iOS) · shared API
+            package across both platforms
+          </p>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">Screens</p>
+          <div class="modal__screens">
+            <img src="imgs/ptp/capture.png" alt="Pic-to-Plate capture screen">
+            <img src="imgs/ptp/preference.png" alt="Pic-to-Plate preferences screen">
+            <img src="imgs/ptp/recipes.png" alt="Pic-to-Plate recipe list">
+            <img src="imgs/ptp/recipe-detail.png" alt="Pic-to-Plate single recipe view">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -167,9 +256,94 @@
         <p style="font: 500 13px var(--font-mono); color: var(--sub); margin-top: 14px; letter-spacing: .04em;">
           Currently validating in dev and test. Targeting release late July / early August 2026.
         </p>
-        <a href="https://github.com/sasmald/keystone" class="btn btn--ghost-dark" target="_blank" rel="noopener" style="margin-top: 24px;">
-          Follow progress on GitHub →
-        </a>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
+          <a href="https://github.com/sasmald/keystone" class="btn btn--ghost-dark" target="_blank" rel="noopener">
+            Follow progress on GitHub →
+          </a>
+          <button type="button" class="btn btn--outline" data-modal-open="keystone-modal">
+            Learn more →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Keystone AI · "Learn more" overlay -->
+    <div class="modal" id="keystone-modal" aria-hidden="true">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="keystone-modal-title">
+        <button type="button" class="modal__close" data-modal-close aria-label="Close">✕</button>
+
+        <p class="eyebrow">KEYSTONE AI · INSIDE THE BUILD</p>
+        <h2 id="keystone-modal-title" class="modal__title">A director's process, not a prompt chain.</h2>
+        <p class="modal__lede">
+          A repeatable operating system for taking an ambiguous idea to a
+          validated MVP: agents do the execution labor, I make the go or
+          no-go call at every stage.
+        </p>
+
+        <div class="modal__section">
+          <p class="modal__label">Six stages, six gates</p>
+          <table class="modal__table">
+            <tbody>
+              <tr>
+                <td>Signal intake</td>
+                <td>Is this worth building at all?</td>
+              </tr>
+              <tr>
+                <td>Ideation &amp; direction</td>
+                <td>Which direction do we commit to, and what do I reject?</td>
+              </tr>
+              <tr>
+                <td>Spec synthesis</td>
+                <td>Where's the MVP boundary, and what do I cut?</td>
+              </tr>
+              <tr>
+                <td>Build</td>
+                <td>Which architecture tradeoffs do I accept or override?</td>
+              </tr>
+              <tr>
+                <td>Eval</td>
+                <td>Ship or no-ship, given the risk?</td>
+              </tr>
+              <tr>
+                <td>Narrative</td>
+                <td>Is this the true story, and what claim can I defend?</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">26 skills, one rule</p>
+          <p class="modal__text">
+            Each stage draws on a library of versioned skill prompts, purpose-built
+            for things like scoring ideas, stress-testing personas, cutting scope,
+            framing tradeoffs, and catching overclaims. They all share one
+            constraint: a skill can produce a verdict input, never the verdict
+            itself. The call stays with me.
+          </p>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">What's logged</p>
+          <p class="modal__text">
+            Every gate produces a timestamped entry: what the agent proposed,
+            what I overrode, and why. That log is the real artifact, more than
+            any app it produces. It's judgment made auditable instead of
+            asserted.
+          </p>
+        </div>
+
+        <div class="modal__section">
+          <p class="modal__label">Where it stands, honestly</p>
+          <p class="modal__text">
+            Stages run sequentially by hand today, a deliberate v1 boundary for
+            a solo operator. Automating the handoff between stages is next.
+            Eval coverage is only as strong as the test cases behind it, and
+            writing good tests is still the harder half of the job, not
+            something a gate can automate away.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -189,5 +363,33 @@
 
   <script src="components/header.js"></script>
   <script src="components/footer.js"></script>
+  <script>
+    // Build-detail modals (currently just Pic-to-Plate's "Learn more")
+    document.querySelectorAll('[data-modal-open]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const modal = document.getElementById(btn.dataset.modalOpen);
+        if (!modal) return;
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeAllModals() {
+      document.querySelectorAll('.modal.is-open').forEach(function (modal) {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+      });
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-modal-close]').forEach(function (el) {
+      el.addEventListener('click', closeAllModals);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeAllModals();
+    });
+  </script>
 </body>
 </html>

@@ -29,8 +29,6 @@ Planning/
   Homepage v2 Hybrid (standalone).html    — design prototype v2
   Homepage v2 Hybrid (standalone) 2.html  — design prototype v2b (base for build)
 
-resumes/                                  — PDF resumes tailored to specific roles/employers (not linked from the site)
-
 star_stories/                             — source material: detailed STAR-format career narratives (.docx)
   Safar_Complete_STAR_Suite.docx              — source for the Acute-Care Virtual Platform case study
   BrainCheck_ADRD_Complete_Suite.docx         — source for the Cognitive Screening Platform case study
@@ -48,6 +46,7 @@ ds_website/                               — active build (start here); publish
   about.html      — Through-line + Signal (podcast/speaking/advisory) + experience
   contact.html    — Contact CTA page
   CNAME           — Pins the custom domain (debashishsasmal.com) for GitHub Pages
+  resumes/        — PDF résumé(s) linked from contact.html's "Download résumé" CTA
   components/
     header.js       — Shared nav (injected via data-include="header"); also renders a mobile
                        hamburger toggle (.nav-toggle / .nav-menu) below the 780px breakpoint
@@ -70,15 +69,23 @@ ds_website/                               — active build (start here); publish
                        4-font system since it's presenting an external product's own brand
     signal.css      — Podcast + credibility grid (stacks under 900px)
     contact.css     — Contact CTA section + site footer
-    accordion.css   — Expand/collapse case studies on work.html; 3-col Bet/Call/What-Happened
-                       layout on desktop (stacks under 900px, further tightens under 780px)
+    accordion.css   — Expand/collapse case studies on work.html (only one item open at a time,
+                       opening one closes any other); 3-col Bet/Call/What-Happened layout on
+                       desktop (stacks under 900px, further tightens under 780px); also styles
+                       the Role/Scope/Teams scan strip under each collapsed case summary and the
+                       .metrics-key provenance note in the page-hero
     page-hero.css   — Inner-page hero banner (used on work/ai/about/contact)
     hub-cards.css   — Home page 4-card navigation grid linking to sub-pages (1-col under 780px,
                        2-col tablet step 781–980px)
     timeline.css    — Shared experience-timeline row component (date/org/role/body), used by
                        work.html (full, baseline) and about.html (brief variant, no body copy)
+    modal.css       — Generic overlay ("Learn more" build-detail modals on ai.html), driven by
+                       data-modal-open/data-modal-close attributes wired up in ai.html's inline
+                       script; written reusable, not Pic-to-Plate/Keystone-specific
   imgs/
     DS1.png              — Portrait photo (used in hero, object-position: 40% center)
+    ptp/                 — Pic-to-Plate product screenshots, shown inside its "Learn more" modal
+                            on ai.html (not on the main page, to keep that card short)
 ```
 
 ## Design system
@@ -91,12 +98,12 @@ ds_website/                               — active build (start here); publish
 - Body: `Libre Franklin` (400)
 - Labels / mono / section markers: `IBM Plex Mono` (400/500/600)
 
-**Color tokens (tokens.css):**
-- `--paper: #F4F1EC` — page background
-- `--ink: #1D1F24` — primary text
-- `--accent: #B86E3A` — warm orange (CTAs, eyebrows, hover states)
-- `--accent-2: #E0A45E` — light orange (dark section accents)
-- `--dark: #1A1714` — dark section backgrounds
+**Color tokens (tokens.css):** mineral teal / brass palette (switched off an earlier warm-cream/terracotta scheme to avoid looking Anthropic-like)
+- `--paper: #F4F1EA` — page background
+- `--ink: #20272D` — primary text
+- `--accent: #2F6B62` — mineral teal (CTAs, eyebrows, hover states)
+- `--accent-2: #C3A66B` — brass (dark section accents)
+- `--dark: #172126` — dark section backgrounds
 - `--cobalt: #2E6FB7` — podcast card accent
 
 **Section eyebrow pattern:** `// SECTION NAME` using `.eyebrow` class (IBM Plex Mono, 12px, letter-spacing .16em, `--accent` color)
@@ -121,15 +128,24 @@ Header and footer are injected by JS components — not hardcoded in each page:
 
 ## Page structure
 
-**Home (index.html):** Hero → Path strip → Dark "3 case studies" teaser grid (each card links to `work.html#<id>`) → Method (signature section) → Through-line → 4 hub cards
+**Home (index.html):** Hero (headline now paired with a `.hero-role` positioning pill, e.g. "Product & Venture Leader · Enterprise AI · Complex B2B", above the H1) → Path strip → Dark "3 case studies" teaser grid (each card links to `work.html#<id>`) → Method (signature section) → Through-line → 4 hub cards
 
-**Work (work.html):** Page hero → Accordion case studies (Chronic-Pain Care Venture / Cognitive Screening Platform / Acute-Care Virtual Platform, click + to expand; each follows Bet → Call → What Happened → Stats → Proves) → Experience timeline. Deep-linking a case (`work.html#venture-origination`, `#workflow-investment`, `#platform-exit`) auto-expands and scrolls to it via the inline script at the bottom of the file.
+**Work (work.html):** Page hero (includes a small `.metrics-key` note explaining the observed/est./system-outcome convention used in the stats below) → Accordion case studies (Chronic-Pain Care Venture / Cognitive Screening Platform / Acute-Care Virtual Platform, click + to expand, only one open at a time; each collapsed row also shows a Role/Scope/Teams scan strip above the fold, then expands into Bet → Call → What Happened → Stats → Proves) → Experience timeline. Deep-linking a case (`work.html#venture-origination`, `#workflow-investment`, `#platform-exit`) auto-expands and scrolls to it via the inline script at the bottom of the file.
 
-**AI (ai.html):** Page hero → Dark POV section (real POV, no longer a strawman) → Build cards: Pic-to-Plate (shipped, live on the App Store) + Keystone AI (in progress, on GitHub, uses its own brand mark, imgs/keystone-ai-icon.svg) + a "Next up" placeholder for Trendshelf
+**AI (ai.html):** Page hero → Dark POV section (real POV, no longer a strawman) → Build cards: Pic-to-Plate (shipped, live on the App Store) + Keystone AI (in progress, on GitHub, uses its own brand mark, imgs/keystone-ai-icon.svg) + a "Next up" placeholder for Trendshelf. Both build cards pair their primary CTA with a "Learn more →" button that opens a modal (see Build-detail modals below) rather than lengthening the main card.
 
 **About (about.html):** Page hero → Through-line narrative → Signal section (podcast/CMU-BPUT education/speaking-advisory) → Brief experience timeline
 
-**Contact (contact.html):** Centred CTA + cross-links to other pages
+**Contact (contact.html):** Centred CTA (résumé download is the primary pill CTA, ahead of email/LinkedIn/GitHub) + cross-links to other pages
+
+## Build-detail modals (ai.html)
+
+Pic-to-Plate and Keystone AI each have a "Learn more" button that opens an overlay with deeper, curated content, kept out of the main scrollable page so the build cards stay short. Pattern:
+- Markup: `<div class="modal" id="...">` with a `.modal__backdrop` and `.modal__panel`; trigger buttons use `data-modal-open="<modal id>"`, close controls use `data-modal-close`.
+- Behavior: one small inline script at the bottom of ai.html wires up all `[data-modal-open]`/`[data-modal-close]` elements generically (open/close/Escape/backdrop-click, body-scroll lock); no per-modal JS needed for a new one.
+- Styling: `styles/modal.css`, written reusable, not specific to either build.
+- Content policy: curated from the source project's own docs (`picturetoplate/portfolio_documents/`, `keystone/README.md` + `CLAUDE.md`), not reproduced wholesale. Keep it conceptual enough to be legible as evidence of judgment, not detailed enough to hand someone a blueprint to copy (true for Keystone in particular: describe the six stages, the skills concept, and the gate/decision-log discipline in plain language, but don't list actual internal skill filenames, prompt text, or schema). Also drop any "what this demonstrates for a Director/PM role" self-assessment framing from the source docs, since stating your own qualifications back to the reader reads as a victory lap rather than showing it (see Voice below) — let the facts (the scope table, the specific decision, the honest limitations) carry it instead.
+- Pic-to-Plate's modal includes its 4 product screenshots (`imgs/ptp/`); Keystone's does not, since the product doesn't have a UI yet, a schematic diagram would misrepresent progress that hasn't happened.
 
 ## Content strategy
 

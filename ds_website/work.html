@@ -46,6 +46,11 @@
       the same way: the bet, the call I made, what happened, and what it proves.
       Click any case study to expand the full narrative.
     </p>
+    <p class="metrics-key">
+      Figures below are observed results unless marked <strong>est.</strong> (modeled
+      from available data). Where a number reflects a broader team or system outcome
+      rather than a single decision, that's noted alongside it.
+    </p>
   </div>
 
   <!-- =========================================================
@@ -66,6 +71,20 @@
             Chronic pain is a care-model problem before it is a product problem. I architected
             the venture inside UPMC Enterprises and led product, then advised the founding
             team through its launch with single-signature access to 100+ practices.
+          </div>
+          <div class="accordion-trigger__scan">
+            <div class="scan-item">
+              <span class="scan-item__label">Role</span>
+              <span class="scan-item__value">Venture Architect → Strategic Advisor</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-item__label">Scope</span>
+              <span class="scan-item__value">0→1 venture, thesis through enterprise launch</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-item__label">Teams</span>
+              <span class="scan-item__value">Clinical ops, data science, enterprise partnerships, external venture partner</span>
+            </div>
           </div>
         </div>
         <span class="accordion-trigger__icon" aria-hidden="true">+</span>
@@ -145,7 +164,7 @@
               </div>
               <div class="accordion-stat">
                 <div class="accordion-stat__value">67% ↓</div>
-                <div class="accordion-stat__label">hospitalizations</div>
+                <div class="accordion-stat__label">hospitalizations (matched cohort)</div>
               </div>
             </div>
 
@@ -174,6 +193,20 @@
           <div class="accordion-trigger__summary">
             Cognitive screening fails on workflow, not science. I invested, integrated, and
             advised the board as it scaled.
+          </div>
+          <div class="accordion-trigger__scan">
+            <div class="scan-item">
+              <span class="scan-item__label">Role</span>
+              <span class="scan-item__value">Investor & Board Observer</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-item__label">Scope</span>
+              <span class="scan-item__value">EHR-scale integration across a large health system</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-item__label">Teams</span>
+              <span class="scan-item__value">Clinical informatics, Epic integration, compliance, portfolio-company leadership</span>
+            </div>
           </div>
         </div>
         <span class="accordion-trigger__icon" aria-hidden="true">+</span>
@@ -284,6 +317,20 @@
             An internal workflow tool, repositioned as a multi-tenant platform, becomes acquirable.
             I owned it end to end, from clinical discovery through the exit.
           </div>
+          <div class="accordion-trigger__scan">
+            <div class="scan-item">
+              <span class="scan-item__label">Role</span>
+              <span class="scan-item__value">Product & Commercialization Lead → Deal Architect</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-item__label">Scope</span>
+              <span class="scan-item__value">Multi-tenant platform, six service lines, 30+ locations</span>
+            </div>
+            <div class="scan-item">
+              <span class="scan-item__label">Teams</span>
+              <span class="scan-item__value">Product, engineering, clinical ops, corporate development</span>
+            </div>
+          </div>
         </div>
         <span class="accordion-trigger__icon" aria-hidden="true">+</span>
       </button>
@@ -320,8 +367,10 @@
               <span class="accordion-content__label">What Happened</span>
               <p class="accordion-content__text">
                 The platform expanded across six service lines and 30+ UPMC locations,
-                reduced specialist connection time to under
-                two minutes, and supported more than 40,000 consults.
+                reduced specialist connection time to under two minutes, and nearly
+                tripled consults handled per specialist, measured before and after,
+                without adding specialist headcount, while supporting more than
+                40,000 consults.
               </p>
               <p class="accordion-content__text">
                 It was acquired by a strategic acquirer in 2024 through a transaction that
@@ -428,13 +477,21 @@
   <script src="components/header.js"></script>
   <script src="components/footer.js"></script>
   <script>
-    // Accordion behaviour
+    // Accordion behaviour — only one case study open at a time
     document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
       trigger.addEventListener('click', function () {
         const item = this.closest('.accordion-item');
         const isOpen = item.classList.contains('is-open');
-        item.classList.toggle('is-open');
-        this.setAttribute('aria-expanded', !isOpen);
+
+        document.querySelectorAll('.accordion-item.is-open').forEach(function (openItem) {
+          openItem.classList.remove('is-open');
+          openItem.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
       });
     });
 
