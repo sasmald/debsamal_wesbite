@@ -27,6 +27,6 @@ jobs:
       # site again, change this path back to: ds_website
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ds_website-holding
+          path: ds_website
       - id: deployment
         uses: actions/deploy-pages@v4
