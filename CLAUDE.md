@@ -156,8 +156,6 @@ Index.html's teaser cards and work.html's accordion must stay numerically consis
 
 ## Outstanding TODOs before launch
 
-- [ ] Portrait `object-position` is `40% center` — adjust further if needed
 - [ ] Verify all case study figures (including the newer STAR-sourced ones: $8-9M+, $3-6M (est.), 67% hospitalizations, etc.) are publicly attributable before launch
 - [ ] "Next up: Trendshelf" placeholder on ai.html — fill when next project ships
 - [ ] Do a real-device mobile QA pass (hamburger menu, all breakpoints) before launch — the responsive pass was done in-browser/devtools, not verified on physical devices yet
-- [ ] Cognitive Screening Platform's "What it proves" line on work.html ends with a dangling pronoun ("Four years later, he asked me to expand the program...") with no antecedent in the current Bet/Call/What Happened copy — needs the stakeholder reintroduced briefly, or the sentence dropped, before launch
