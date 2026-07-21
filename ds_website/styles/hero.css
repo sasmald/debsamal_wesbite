@@ -9,17 +9,7 @@
   padding: 64px var(--pad-x) 64px;
 }
 
-.hero-kicker {
-  font: 500 13px var(--font-mono);
-  letter-spacing: .1em;
-  color: var(--sub);
-  margin-bottom: 22px;
-  text-wrap: balance;
-}
-
-/* Two-column grid: headline/body/actions vs. portrait.
-   align-items: start means the portrait top lines up exactly with the
-   headline top, since the kicker now lives outside this grid entirely. */
+/* Two-column grid: headline/body/actions vs. portrait. */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.7fr 1fr;

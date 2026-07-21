@@ -26,6 +26,14 @@
   flex-wrap: wrap;
 }
 
+.contact-location {
+  font: 500 12px var(--font-mono);
+  letter-spacing: .04em;
+  color: var(--ink);
+  opacity: .6;
+  margin-top: 24px;
+}
+
 @media (max-width: 780px) {
   .contact-section {
     padding: 64px var(--pad-x);
