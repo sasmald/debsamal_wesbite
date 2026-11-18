@@ -1,158 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI · Debashish Sasmal</title>
-  <meta name="description" content="A point of view on AI in regulated, expert-heavy products, backed by things I actually built.">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Debashish Sasmal">
-  <meta property="og:url" content="https://debashishsasmal.com/ai.html">
-  <meta property="og:title" content="AI · Debashish Sasmal">
-  <meta property="og:description" content="A point of view on AI in regulated, expert-heavy products, backed by things I actually built.">
-  <meta property="og:image" content="https://debashishsasmal.com/imgs/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="AI · Debashish Sasmal">
-  <meta name="twitter:description" content="A point of view on AI in regulated, expert-heavy products, backed by things I actually built.">
-  <meta name="twitter:image" content="https://debashishsasmal.com/imgs/og-image.png">
-
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/nav.css">
-  <link rel="stylesheet" href="styles/page-hero.css">
-  <link rel="stylesheet" href="styles/ai.css">
-  <link rel="stylesheet" href="styles/buildlog.css">
-  <link rel="stylesheet" href="styles/modal.css">
-
-  <!-- Pic-to-Plate build card uses its own brand type, separate from the site's type system -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perspectives · Debashish Sasmal</title>
+<meta name="description" content="Perspectives on Implementation-Market Fit, health-system venture creation and enterprise AI governance, plus selected applied AI experiments.">
+<link rel="canonical" href="https://debashishsasmal.com/ai.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Debashish Sasmal">
+<meta property="og:url" content="https://debashishsasmal.com/ai.html">
+<meta property="og:title" content="Perspectives · Debashish Sasmal">
+<meta property="og:description" content="Perspectives on Implementation-Market Fit, health-system venture creation and enterprise AI governance, plus selected applied AI experiments.">
+<meta name="twitter:card" content="summary">
+<link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/editorial.css">
 </head>
 <body>
-
-  <div data-include="header"></div>
-
-  <!-- =========================================================
-       PAGE HERO
-       ========================================================= -->
-  <div class="page-hero">
-    <p class="page-hero__eyebrow">// AI</p>
-    <h1 class="page-hero__headline">A point of view, not a feature list.</h1>
-    <p class="page-hero__body">
-      In regulated, expert-heavy products, AI's job isn't to replace the expert.
-      It's to remove the friction between the expert's judgment and the action.
-      I build small tools to keep that opinion honest.
-    </p>
-  </div>
-
-  <!-- =========================================================
-       POV SECTION
-       ========================================================= -->
-  <section class="ai-section">
-    <div class="ai-inner">
-      <div>
-        <p class="eyebrow eyebrow--light">// THE TAKE</p>
-        <h2 class="ai-quote">
-          AI earns autonomy the same way a new hire does: narrow scope, a
-          track record, then wider latitude. Anything else is a demo, not
-          a system.
-        </h2>
-      </div>
-      <div>
-        <p class="ai-body-primary">
-          The teams that get this right embed AI inside the existing workflow
-          (the system of record, the handoff, the queue) instead of bolting on
-          a separate app the expert has to context-switch into. And they let
-          trust compound in increments: tight scope first, human override
-          always live, autonomy widening only as the system proves itself in
-          that lane. Skip the increments and the failure mode shows up in
-          production instead of in a demo, and in healthcare, the failure
-          mode is the product.
-        </p>
-        <p class="ai-body-secondary">
-          I hold that view because I've built the workflow platforms where
-          embedding, not add-on features, was the unlock. And Keystone, below,
-          is that same trust-compounding logic applied to how I build with AI
-          myself: narrow gate, human call, then the next stage opens.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       AI BUILDS / PERSONAL PROJECTS
-       ========================================================= -->
-  <section style="max-width: var(--max-w); margin: 0 auto; padding: 80px var(--pad-x);">
-    <p class="eyebrow">// BUILDS</p>
-    <p style="font: 400 18px/1.62 var(--font-sans); color: var(--sub); margin-top: 18px; max-width: 620px;">
-      Small builds I ship myself to pressure-test what AI can actually do, and to
-      keep my engineering, product, strategy, and venture-investing instincts sharp
-      while I learn it firsthand.
-    </p>
-
-    <!-- Picture-to-Plate -->
-    <div class="buildlog-card" style="margin-top: 40px;">
-      <div class="ptp-hero">
-        <div class="ptp-eyebrow">
-          <span class="ptp-dot"></span>
-          KITCHEN COMPANION
-        </div>
-        <h1 class="ptp-title">Pic-to-Plate<span class="ptp-dot ptp-dot--period"></span></h1>
-        <p class="ptp-subtitle">Snap what's in the fridge. Cook what's on the plate.</p>
-      </div>
-      <div class="buildlog-content">
-        <p class="eyebrow">APPLIED AI · VISION + GENERATION · LIVE ON iOS</p>
-        <h3 class="buildlog-content__title">Pic-to-Plate</h3>
-        <p class="buildlog-content__body">
-          An image-to-recipe app, live on the App Store as an MVP. Photograph
-          what's in your fridge, get a recipe back. I built it to see where vision
-          models are reliable versus where they hallucinate, and to learn what
-          the model can't do alone: remember your pantry and weigh it against
-          what you're in the mood for. That workflow layer is why the app
-          returns a curated shortlist (3 almost-there, 3 a short trip, 3 worth
-          planning around) instead of endless recipes.
-        </p>
-        <div class="buildlog-stats">
-          <div class="buildlog-stat">
-            <div class="buildlog-stat__value">2 mo</div>
-            <div class="buildlog-stat__label">concept to App Store</div>
-          </div>
-          <div class="buildlog-stat">
-            <div class="buildlog-stat__value">2</div>
-            <div class="buildlog-stat__label">platforms, 1 codebase</div>
-          </div>
-          <div class="buildlog-stat">
-            <div class="buildlog-stat__value">27</div>
-            <div class="buildlog-stat__label">decisions documented</div>
-          </div>
-        </div>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
-          <a href="https://apps.apple.com/us/app/pic-to-plate/id6784744692" class="btn btn--ghost-dark">
-            Get it on the App Store →
-          </a>
-          <button type="button" class="btn btn--outline" data-modal-open="ptp-modal">
-            Learn more →
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pic-to-Plate · "Learn more" overlay -->
-    <div class="modal" id="ptp-modal" aria-hidden="true">
-      <div class="modal__backdrop" data-modal-close></div>
-      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="ptp-modal-title">
-        <button type="button" class="modal__close" data-modal-close aria-label="Close">✕</button>
-
-        <p class="eyebrow">PIC-TO-PLATE · INSIDE THE BUILD</p>
-        <h2 id="ptp-modal-title" class="modal__title">Solo, concept to the App Store, in two months.</h2>
+<a class="skip-link" href="#main">Skip to content</a>
+<div data-include="header">
+</div>
+<noscript>
+<nav class="wrap fallback-nav" aria-label="Main navigation">
+<a href="index.html">Home</a>
+<a href="work.html">Work</a>
+<a href="ai.html">Perspectives</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+</noscript>
+<main id="main" tabindex="-1">
+<header class="page-intro wrap">
+<p class="eyebrow">PERSPECTIVES</p>
+<h1>Building is only the beginning.</h1>
+<p class="lede">A product’s value depends on what happens when it meets the organization around it. These are the questions I bring to healthcare product management, venture incubation and enterprise AI.</p>
+</header>
+<nav class="topic-nav wrap" aria-label="Perspectives topics"><a href="#implementation-market-fit">Implementation-Market Fit</a><a href="#venture-creation">Venture creation</a><a href="#enterprise-ai">Enterprise AI</a><a href="#experiments">Applied AI experiments</a></nav>
+<section class="section wrap essays">
+<p class="eyebrow">WORKING PERSPECTIVES</p>
+<article id="implementation-market-fit">
+<div>
+<span class="row-index">01</span>
+<h2>Implementation-Market Fit</h2>
+</div>
+<div>
+<p class="lede">Demand is a starting point. The workflow determines whether a product becomes part of care.</p>
+<p>I use Implementation-Market Fit to describe the fit between a product and the organization expected to use it: clinical workflows, integration, accountability, training and the economics of delivery.</p>
+<p>In cognitive screening, the assessment was one part of a larger pathway. Documentation, patient communication and referral needed to work together. Those choices belonged in the investment and product thesis from the start.</p>
+<a class="text-link" href="work.html#workflow-investment">Read the BrainCheck case ↗</a>
+</div>
+</article>
+<article id="venture-creation">
+<div>
+<span class="row-index">02</span>
+<h2>Build the business around the care model.</h2>
+</div>
+<div>
+<p class="lede">A health-system asset becomes a venture when the delivery model and commercial model can work together.</p>
+<p>The question is not simply whether a capability can become software. It is who needs it, how they will adopt it, and what the company must do to deliver the value reliably. Reviewing venture strategy means testing those assumptions together, with founders and the teams responsible for delivery and adoption.</p>
+<p>Glimmer required a path from a specialist care model to virtual delivery. Safar required a choice between standalone growth and strategic partnership. Product strategy helped make those company-building choices concrete.</p>
+<a class="text-link" href="work.html#venture-origination">Read the Glimmer case ↗</a>
+</div>
+</article>
+<article id="enterprise-ai">
+<div>
+<span class="row-index">03</span>
+<h2>AI has to earn trust in use.</h2>
+</div>
+<div>
+<p class="lede">Governance, adoption and monitoring are part of the product.</p>
+<p>Enterprise AI works best when it is embedded in the workflow that already exists. I favor a narrow initial scope, clear human accountability and a way to observe what happens after deployment.</p>
+<p>Autonomy should widen as a system demonstrates reliability in its intended setting. Monitoring drift and bias, preserving human override and making decisions auditable are practical requirements for that progression.</p>
+<p>My own AI builds keep that view grounded: working with the models makes their limitations harder to abstract away.</p>
+</div>
+</article>
+</section>
+<section class="tinted">
+<div class="section wrap">
+<div class="section-heading">
+<div>
+<p class="eyebrow">CONVERSATIONS &amp; KNOWLEDGE SHARING</p>
+<h2>The Product Signal</h2>
+</div>
+<div>
+<p>Co-created with Carnegie Mellon’s Brad Eiben, the podcast explores product craft and the judgment behind the work. I also contribute through guest teaching, capstone advising, speaking and founder mentorship.</p>
+<div class="actions">
+<a class="text-link" href="https://theproductsignal.com/">Explore the podcast ↗</a>
+<a class="text-link" href="about.html#community">Teaching &amp; mentorship ↗</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section wrap" id="experiments">
+<div class="section-heading">
+<div>
+<p class="eyebrow">EXPERIMENTS / APPLIED AI</p>
+<h2>Learning by building.</h2>
+</div>
+<p>Personal projects give me a direct view of what models can do, where they fall short and how much of the product lives around the model.</p>
+</div>
+<article class="experiment">
+<div>
+<p class="eyebrow">VISION + GENERATION · iOS MVP</p>
+<h3>Pic-to-Plate</h3>
+</div>
+<div>
+<p>An image-to-recipe app built around a persistent pantry. The product returns a shortlist across effort tiers, helping people decide what they can cook with what they have.</p>
+<p>The useful learning: image recognition alone is not the workflow. Remembering ingredients, handling uncertainty and avoiding unnecessary regeneration matter just as much.</p>
+<a class="text-link" href="https://apps.apple.com/us/app/pic-to-plate/id6784744692">View on the App Store ↗</a>
+<details class="build-detail" id="ptp-modal">
+<summary>Inside Pic-to-Plate <span aria-hidden="true">+</span>
+</summary>
+<div class="build-detail-content">
+<h4>Solo, concept to the App Store, in two months.</h4>
         <p class="modal__lede">
           Product, design, and full-stack engineering, one person, one thesis:
           the friction in "what's for dinner" isn't ideas, it's not knowing
@@ -225,56 +189,30 @@
         <div class="modal__section">
           <p class="modal__label">Screens</p>
           <div class="modal__screens">
-            <img src="imgs/ptp/capture.png" alt="Pic-to-Plate capture screen">
-            <img src="imgs/ptp/preference.png" alt="Pic-to-Plate preferences screen">
-            <img src="imgs/ptp/recipes.png" alt="Pic-to-Plate recipe list">
-            <img src="imgs/ptp/recipe-detail.png" alt="Pic-to-Plate single recipe view">
+            <img loading="lazy" src="imgs/ptp/capture.png" alt="Pic-to-Plate capture screen">
+            <img loading="lazy" src="imgs/ptp/preference.png" alt="Pic-to-Plate preferences screen">
+            <img loading="lazy" src="imgs/ptp/recipes.png" alt="Pic-to-Plate recipe list">
+            <img loading="lazy" src="imgs/ptp/recipe-detail.png" alt="Pic-to-Plate single recipe view">
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Keystone AI -->
-    <div class="buildlog-card" style="margin-top: 24px;">
-      <div class="buildlog-visual buildlog-visual--icon">
-        <img src="imgs/keystone-ai-horizontal-tagline-on-navy.svg" alt="Keystone AI logo" class="buildlog-visual__icon-img">
-      </div>
-      <div class="buildlog-content">
-        <p class="eyebrow">APPLIED AI · PRODUCT ORCHESTRATION LAYER · DEV + TEST</p>
-        <h3 class="buildlog-content__title">Keystone AI</h3>
-        <p class="buildlog-content__body">
-          A human-in-the-loop orchestration layer for taking an idea to a validated
-          MVP. Skills and agents do the ground work at each of six stages; the
-          judgment, the constraints, and the go or no-go call stay with the expert
-          in the loop, here, a product manager. Nothing advances without that call.
-        </p>
-        <p style="font: 400 14px/1.55 var(--font-sans); color: var(--sub); margin-top: 14px; max-width: 460px;">
-          What it taught me: agents are confidently wrong often enough that the
-          gates aren't overhead, they're the actual product-management
-          contribution. Remove one to move faster and you ship something broken.
-        </p>
-        <p style="font: 500 13px var(--font-mono); color: var(--sub); margin-top: 14px; letter-spacing: .04em;">
-          Currently validating in dev and test. Targeting release late July / early August 2026.
-        </p>
-        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px;">
-          <a href="https://github.com/sasmald/keystone" class="btn btn--ghost-dark" target="_blank" rel="noopener">
-            Follow progress on GitHub →
-          </a>
-          <button type="button" class="btn btn--outline" data-modal-open="keystone-modal">
-            Learn more →
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Keystone AI · "Learn more" overlay -->
-    <div class="modal" id="keystone-modal" aria-hidden="true">
-      <div class="modal__backdrop" data-modal-close></div>
-      <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="keystone-modal-title">
-        <button type="button" class="modal__close" data-modal-close aria-label="Close">✕</button>
-
-        <p class="eyebrow">KEYSTONE AI · INSIDE THE BUILD</p>
-        <h2 id="keystone-modal-title" class="modal__title">A director's process, not a prompt chain.</h2>
+</div>
+</details>
+</div>
+</article>
+<article class="experiment">
+<div>
+<p class="eyebrow">HUMAN-IN-THE-LOOP ORCHESTRATION</p>
+<h3>Keystone AI</h3>
+</div>
+<div>
+<p>An exploration of taking an idea toward a validated MVP through six stages. Agents do the groundwork; the expert sets constraints and makes the go or no-go decision.</p>
+<p>The project explores a simple discipline: record what the agent proposed, what the human overrode and why. A gate is useful only when the judgment and evidence behind it are sound.</p>
+<a class="text-link" href="https://github.com/sasmald/keystone">Explore the project on GitHub ↗</a>
+<details class="build-detail" id="keystone-modal">
+<summary>Inside Keystone AI <span aria-hidden="true">+</span>
+</summary>
+<div class="build-detail-content">
+<h4>Human judgment at each stage.</h4>
         <p class="modal__lede">
           A repeatable operating system for taking an ambiguous idea to a
           validated MVP: agents do the execution labor, I make the go or
@@ -344,52 +282,26 @@
             something a gate can automate away.
           </p>
         </div>
-      </div>
-    </div>
-
-    <!-- Placeholder for future build -->
-    <div style="margin-top: 24px; border: 1.5px dashed var(--border); border-radius: var(--radius-lg); padding: 40px; text-align: center;">
-      <p style="font: 500 12px var(--font-mono); letter-spacing: .12em; color: var(--sub);">
-        NEXT UP · TRENDSHELF
-      </p>
-      <p style="font: 400 14px/1.55 var(--font-sans); color: var(--sub); margin-top: 10px; max-width: 440px; margin-left: auto; margin-right: auto;">
-        Turning restock guesswork into an evidenced call for independent online sellers.
-      </p>
-    </div>
-
-  </section>
-
-  <div data-include="footer"></div>
-
-  <script src="components/header.js"></script>
-  <script src="components/footer.js"></script>
-  <script>
-    // Build-detail modals (currently just Pic-to-Plate's "Learn more")
-    document.querySelectorAll('[data-modal-open]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        const modal = document.getElementById(btn.dataset.modalOpen);
-        if (!modal) return;
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      });
-    });
-
-    function closeAllModals() {
-      document.querySelectorAll('.modal.is-open').forEach(function (modal) {
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden', 'true');
-      });
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('[data-modal-close]').forEach(function (el) {
-      el.addEventListener('click', closeAllModals);
-    });
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeAllModals();
-    });
-  </script>
+</div>
+</details>
+</div>
+</article>
+</section>
+<section class="contact-band wrap">
+<div>
+<p class="eyebrow">LET’S CONNECT</p>
+<h2>Good work starts with a thoughtful conversation.</h2>
+<p>I welcome conversations with founders, investors, health-system leaders and collaborators.</p>
+</div>
+<a class="button" href="contact.html">Get in touch <span aria-hidden="true">↗</span>
+</a>
+</section>
+</main>
+<div data-include="footer">
+</div>
+<script src="components/header.js">
+</script>
+<script src="components/footer.js">
+</script>
 </body>
 </html>
