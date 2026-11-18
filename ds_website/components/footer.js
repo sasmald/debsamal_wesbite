@@ -1,34 +1,5 @@
-/* ============================================================
-   FOOTER COMPONENT
-   Injects the site footer into every page.
-   Usage: <div data-include="footer"></div>
-          <script src="components/footer.js"></script>
-   ============================================================ */
-
-(function () {
-  const FOOTER_HTML = `
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <span class="footer-brand">Debashish Sasmal</span>
-      <span class="footer-sub">Product &amp; Venture Leadership · Pittsburgh, PA · Open to Relocation</span>
-      <ul class="footer-links">
-        <li><a href="https://theproductsignal.com/" class="footer-link" target="_blank" rel="noopener">PODCAST</a></li>
-        <li><a href="mailto:debashish.sasmal@gmail.com" class="footer-link">EMAIL</a></li>
-        <li><a href="https://www.linkedin.com/in/dsasmal/" class="footer-link" target="_blank" rel="noopener">LINKEDIN</a></li>
-        <li><a href="https://github.com/sasmald" class="footer-link" target="_blank" rel="noopener">GITHUB</a></li>
-      </ul>
-    </div>
-  </footer>`;
-
-  function inject() {
-    const placeholder = document.querySelector('[data-include="footer"]');
-    if (!placeholder) return;
-    placeholder.outerHTML = FOOTER_HTML;
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', inject);
-  } else {
-    inject();
-  }
+(() => {
+  const slot = document.querySelector('[data-include="footer"]');
+  if (!slot) return;
+  slot.outerHTML = `<footer class="site-footer"><div class="footer-inner"><span class="footer-brand">Debashish Sasmal</span><span class="footer-sub">Healthcare Venture Builder | Product + Platform Executive · Pittsburgh, PA</span><ul class="footer-links"><li><a class="footer-link" href="https://theproductsignal.com/">PODCAST</a></li><li><a class="footer-link" href="mailto:debashish.sasmal@gmail.com">EMAIL</a></li><li><a class="footer-link" href="https://www.linkedin.com/in/dsasmal/">LINKEDIN</a></li><li><a class="footer-link" href="https://github.com/sasmald">GITHUB</a></li></ul></div></footer>`;
 })();
