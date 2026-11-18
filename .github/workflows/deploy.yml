@@ -21,12 +21,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      # HOLDING PAGE: deploying ds_website-holding/ instead of ds_website/
-      # while work.html content is being revised. To go live with the real
-      # site again, change this path back to: ds_website
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v7
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: ds_website
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
